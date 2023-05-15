@@ -13,6 +13,8 @@ pybids = "^0.16.1"
 numpy = "^1.24.3"
 nibabel = "^5.1.0"
 nilearn = "^0.10.1"
+monai = "^1.1.0"
+torchmetrics = "^0.11.4"
 
 [tool.poetry.group.dev.dependencies]
 snakefmt = "^0.8.4"
@@ -22,6 +24,11 @@ black = "^23.3.0"
 
 [tool.poetry.scripts]
 mri_degad = 'mri_degad.run:main'
+
+[tool.ruff]
+select = ["ALL"]
+ignore = ["ANN101", "ANN102", "TCH", "T20"]
+unfixable = ["F841"]
 
 [build-system]
 requires = ["poetry-core"]
